@@ -5,7 +5,13 @@
       typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
     "
   >
-    <main>
+    <main
+      :class="
+        typeof weather.main != 'undefined' && weather.main.temp > 16
+          ? 'warm'
+          : ''
+      "
+    >
       <div class="search-box">
         <input
           type="text"
@@ -107,6 +113,12 @@ export default {
 </script>
 
 <style>
+@media screen and (max-width: 740px) {
+  main {
+    height: 100vh !important;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -119,24 +131,35 @@ body {
 }
 
 #app {
-  background-image: url("./assets/cold-bg.jpg");
-  background-size: cover;
-  background-position: bottom;
-  transition: 0.4s;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000105;
 }
 
 #app.warm {
-  background-image: url("./assets/warm-bg.jpg");
+  background-color: #392364;
 }
 
 main {
-  min-height: 100vh;
+  height: 800px;
   padding: 25px;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.75)
   );
+
+  background-image: url("./assets/cold-bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4s;
+}
+
+main.warm {
+  background-image: url("./assets/warm-bg.jpg");
 }
 
 .search-box {
