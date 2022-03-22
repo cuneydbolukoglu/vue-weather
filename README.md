@@ -1,6 +1,6 @@
 # vue-weather
 
-![image](https://user-images.githubusercontent.com/55508429/159138656-80146d90-bdff-4ce4-a53e-73ba7a97b7b2.png)
+![image](https://user-images.githubusercontent.com/55508429/159459564-bc5a892d-0a0f-4192-a84f-04719db8324d.png)
 
 
 ## Project setup
